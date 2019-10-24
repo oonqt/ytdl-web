@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const ytdl = require("ytdl-core");
 const ffmpeg = require("fluent-ffmpeg");
-const Util = require("../Utils");
+const Util = require("../utils");
 
 const router = Router();
 
