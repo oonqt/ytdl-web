@@ -1,0 +1,32 @@
+.container {
+    text-align: center;
+    color: #282828;
+}
+
+h3 {
+    margin-bottom: 15px;
+}
+
+.submitBtn {
+    width: 20%;
+    height: 45px;
+    min-width: 155px;
+}
+
+.btn, .btn:hover, .btn:focus {
+    font-size: 15px;
+    background-color: #ff0000;
+}
+
+.input-field input:focus + label {
+    color: #282828 !important;
+}
+
+.input-field input:focus {
+    border-bottom: 1px solid #ff0000 !important;
+    box-shadow: 0 1px 0 0 #ff0000 !important;
+}
+
+li > span {
+    color: #ff0000 !important;
+}
