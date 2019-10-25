@@ -6,9 +6,88 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>YTDL Web</title>
 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <div class="container">
+        <div class="row">
+            <h1>YTDL Web</h1>
+            <h4>A reliable, ad free YouTube downloader</h4>
+        </div>
+
+        <form id="convertForm">
+            <div class="row">
+                <div class="col s9 input-field">
+                    <input type="text" id="videoUrl" required>
+                    <label for="videoUrl">Video URL</label>
+                </div>
+                <div class="col s3 input-field">
+                    <select id="format">
+                        <option value="mp4" selected>MP4</option>
+                        <option value="mp3">MP3</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <button type="submit" class="waves-effect waves-light btn submitBtn"><i class="material-icons right">cloud_download</i>download</button>
+            </div>
+        </form>
+
+        <div class="loadingSpinner" hidden>
+            <div class="preloader-wrapper big active">
+                <div class="spinner-layer spinner-blue">
+                    <div class="circle-clipper left">
+                    <div class="circle"></div>
+                    </div><div class="gap-patch">
+                    <div class="circle"></div>
+                    </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                    </div>
+                </div>
+            
+                <div class="spinner-layer spinner-red">
+                    <div class="circle-clipper left">
+                    <div class="circle"></div>
+                    </div><div class="gap-patch">
+                    <div class="circle"></div>
+                    </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                    </div>
+                </div>
+            
+                <div class="spinner-layer spinner-yellow">
+                    <div class="circle-clipper left">
+                    <div class="circle"></div>
+                    </div><div class="gap-patch">
+                    <div class="circle"></div>
+                    </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                    </div>
+                </div>
+            
+                <div class="spinner-layer spinner-green">
+                    <div class="circle-clipper left">
+                    <div class="circle"></div>
+                    </div><div class="gap-patch">
+                    <div class="circle"></div>
+                    </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="js/materialize.min.js"></script>
+    <script src="js/axios.min.js"></script>
+    <script src="js/convert.js"></script>
+
+    <script>
+        let selects = document.querySelector("select");
+        M.FormSelect.init(selects);
+    </script>
 </body>
 </html>
