@@ -18,9 +18,10 @@ app.use(({}, res, next) => {
 app.use("/", express.static(path.join("static", "web")))
 
 app.use("/api/convert", require("./routes/convert"));
+app.use("/api/check", require("./routes/check"));
 
 app.use(({}, res) => {
-    res.sendFile(path.join(__dirname, "static", "codes", "404.html"));
+    res.sendFile(path.join(__dirname, "static", "errors", "404.html"));
 });
 
 app.listen(port, () => console.log("Listening on port", port));

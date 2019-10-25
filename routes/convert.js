@@ -5,7 +5,7 @@ const Util = require("../utils");
 
 const router = Router();
 
-router.get("/", async (req, res, next) => {
+router.post("/", async (req, res, next) => {
     const title = await Util.getVideoTitle(req.body.url);
     const url = req.body.url;
     const format = req.body.format;
