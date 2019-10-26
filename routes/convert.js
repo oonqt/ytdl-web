@@ -1,4 +1,5 @@
 const { Router } = require("express");
+const { maxVideoLengthMinutes } = require("../config.json");
 const ytdl = require("ytdl-core");
 const ffmpeg = require("fluent-ffmpeg");
 const Util = require("../utils");
@@ -13,6 +14,9 @@ router.post("/", async (req, res, next) => {
     if(!url) return res.status(400).json({ msg: "URL is required" });
     if(!format) return res.status(400).json({ msg: "Format is required" });
     if(!title) return res.status(400).json({ msg: "Invalid/Private YouTube video" });
+
+    let isTooLong = await Util.isTooLong(req.body.url);
+    if(isTooLong) return res.status(400).json({ msg: `Video cannot be longer than ${maxVideoLengthMinutes} minutes` });
 
     switch(format) {
         case "mp4":

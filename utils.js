@@ -12,7 +12,7 @@ module.exports = class {
         return new Promise(async resolve => {
             await ytdl.getInfo(url)
                 .then(info => {
-                    if(info.length_seconds / 60 > maxVideoLength) {
+                    if(info.length_seconds / 60 > maxVideoLengthMinutes) {
                         resolve(true);
                     } else {
                         resolve(false);

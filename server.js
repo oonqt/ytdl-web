@@ -18,7 +18,7 @@ app.use(({}, res, next) => {
 app.use("/", express.static(path.join("static", "web")))
 
 app.use("/api/convert", require("./routes/convert"));
-app.use("/api/check", require("./routes/check"));
+app.use("/api/info", require("./routes/info"));
 
 app.use(({}, res) => {
     res.sendFile(path.join(__dirname, "static", "errors", "404.html"));
